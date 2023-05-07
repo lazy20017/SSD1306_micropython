@@ -239,6 +239,16 @@ class SSD1306_I2C(SSD1306):
         self.buffer[0] = 0x40  # Set first byte of data buffer to Co=0, D/C=1
         self.framebuf = framebuf.FrameBuffer1(memoryview(self.buffer)[1:], width, height)
         self.blit = self.framebuf.blit
+        self.pixel = self.framebuf.pixel
+        self.hline = self.framebuf.hline
+        self.vline = self.framebuf.vline
+        self.line = self.framebuf.line
+        self.rect = self.framebuf.rect
+        self.fill_rect = self.framebuf.fill_rect
+        self.text = self.framebuf.text
+        self.scroll = self.framebuf.scroll
+
+
 
         super().__init__(width, height, external_vcc)
 
